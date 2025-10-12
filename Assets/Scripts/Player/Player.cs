@@ -105,13 +105,8 @@ public class Player : MonoBehaviour
             return;
 
         StartCoroutine(KnockbackRoutine());
-<<<<<<< Updated upstream
         anim.SetTrigger("knockback");
         rb.velocity = new Vector2(knockbackPower.x * -facingDir, knockbackPower.y);
-=======
-        //anim.SetTrigger("knockback");//update 12/10/2025 Trap
-        rb.linearVelocity = new Vector2(knockbackPower.x * knockbackDir, knockbackPower.y);
->>>>>>> Stashed changes
     }
     private IEnumerator KnockbackRoutine()
     {
@@ -141,7 +136,7 @@ public class Player : MonoBehaviour
     {
         isAirborne = true;
 
-        if (rb.linearVelocity.y < 0)
+        if (rb.velocity.y < 0)
             ActivateCoyoteJump();
     }
 
@@ -208,18 +203,18 @@ public class Player : MonoBehaviour
 
 
 
-    private void Jump() => rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+    private void Jump() => rb.velocity = new Vector2(rb.velocity.x, jumpForce);
     private void DoubleJump()
     {
         StopCoroutine(WallJumpRoutine());
         isWallJumping = false;
         canDoubleJump = false;
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, doubleJumpForce);
+        rb.velocity = new Vector2(rb.velocity.x, doubleJumpForce);
     }
     private void WallJump()
     {
         canDoubleJump = true;
-        rb.linearVelocity = new Vector2(wallJumpForce.x * -facingDir, wallJumpForce.y);
+        rb.velocity = new Vector2(wallJumpForce.x * -facingDir, wallJumpForce.y);
 
         Flip();
         StartCoroutine(WallJumpRoutine());
@@ -236,14 +231,14 @@ public class Player : MonoBehaviour
 
     private void HandleWallSlide()
     {
-        bool canWallSlide = isWallDetected && rb.linearVelocity.y < 0;
+        bool canWallSlide = isWallDetected && rb.velocity.y < 0;
         float yModifer = yInput < 0 ? 1 : .05f;
 
         if (canWallSlide == false)
             return;
 
 
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * yModifer);
+        rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * yModifer);
     }
 
     private void HandleCollision()
@@ -254,8 +249,8 @@ public class Player : MonoBehaviour
 
     private void HandleAnimations()
     {
-        anim.SetFloat("xVelocity", rb.linearVelocity.x);
-        anim.SetFloat("yVelocity", rb.linearVelocity.y);
+        anim.SetFloat("xVelocity", rb.velocity.x);
+        anim.SetFloat("yVelocity", rb.velocity.y);
         anim.SetBool("isGrounded", isGrounded);
         anim.SetBool("isWallDetected", isWallDetected);
     }
@@ -268,7 +263,7 @@ public class Player : MonoBehaviour
         if (isWallJumping)
             return;
 
-        rb.linearVelocity = new Vector2(xInput * moveSpeed, rb.linearVelocity.y);
+        rb.velocity = new Vector2(xInput * moveSpeed, rb.velocity.y);
     }
 
     private void HandleFlip()
