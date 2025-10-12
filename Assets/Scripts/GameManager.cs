@@ -55,4 +55,11 @@ public class GameManager : MonoBehaviour
 
     public void AddFruit() => fruitsCollected++;
     public bool FruitHaveRandomLook() => fruitsAreRandom;
+
+    private void LoadTheEndScene() => UnityEngine.SceneManagement.SceneManager.LoadScene("TheEnd");
+
+    public void LevelFinished()
+    {
+        UI_InGame.instance.fadeEffect.ScreenFade(1, 1.5f, LoadTheEndScene);
+    }
 }
