@@ -11,7 +11,7 @@ public class FinishPoint : MonoBehaviour
         if (player != null)
         {
             anim.SetTrigger("activate");
-            GameManager.instance.LevelFinished();
+            Debug.Log("Level Complete!");
         }
     }
 }
