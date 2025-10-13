@@ -106,7 +106,7 @@ public class Player : MonoBehaviour
 
         StartCoroutine(KnockbackRoutine());
         //anim.SetTrigger("knockback");//update 12/10/2025 Trap
-        rb.linearVelocity = new Vector2(knockbackPower.x * knockbackDir, knockbackPower.y);
+        rb.linearVelocity = new Vector2(knockbackPower.x , knockbackPower.y);
     }
     private IEnumerator KnockbackRoutine()
     {

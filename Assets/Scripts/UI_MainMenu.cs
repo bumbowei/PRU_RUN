@@ -10,6 +10,8 @@ public class UI_MainMenu : MonoBehaviour
     private UI_FadeEffect fadeEffect;
     public string sceneName;
 
+    [SerializeField] private GameObject[] uiElenments;
+
 
     private void Awake()
     {
@@ -19,6 +21,16 @@ public class UI_MainMenu : MonoBehaviour
     private void Start()
     {
         fadeEffect.ScreenFade(0, 1.5f);
+    }
+
+    public void SwicthUI(GameObject uiToEnable)
+    {
+        foreach (GameObject ui in uiElenments)
+        {
+            ui.SetActive(false);
+        }
+
+        uiToEnable.SetActive(true);
     }
 
     public void NewGame()
