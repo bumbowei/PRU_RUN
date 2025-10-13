@@ -69,8 +69,13 @@ public class Player : MonoBehaviour
     private void Update()
     {
         UpdateAirbornStatus();
-        if(canBeControlled == false)
-            return;
+        if(canBeControlled == false) 
+        {
+            HandleCollision();//update 13/10/2025 Trap Trampoline
+            HandleAnimations();//update 13/10/2025 Trap Trampoline
+            return; 
+        }
+            
 
         if (isKnocked)
             return;
@@ -123,6 +128,21 @@ public class Player : MonoBehaviour
         Destroy(gameObject);
     }
 
+    //update 13/10/2025 Trap Trampoline
+    public void Push(Vector2 direction,float duration = 0)
+    {
+        StartCoroutine(PushCouroutine(direction,duration));
+    }
+
+    //update 13/10/2025 Trap Trampoline
+    private IEnumerator PushCouroutine(Vector2 direction, float duration = 0)
+    {
+        canBeControlled = false;
+        rb.velocity = Vector2.zero;
+        rb.AddForce(direction,ForceMode2D.Impulse);
+        yield return new WaitForSeconds(duration);
+        canBeControlled =true;
+    }
 
     private void UpdateAirbornStatus()
     {
