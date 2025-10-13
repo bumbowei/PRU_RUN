@@ -48,8 +48,10 @@ public class Player : MonoBehaviour
     private bool facingRight = true;
     private int facingDir = 1;
 
-    [Header("VFX")]
+    [Header("Player Visuals")]
+    [SerializeField] private AnimatorOverrideController[] animator;
     [SerializeField] private GameObject deathVFX;
+    [SerializeField] private int skinId;
 
     private void Awake()
     {
@@ -63,6 +65,8 @@ public class Player : MonoBehaviour
     {
         defaulGravityScale = rb.gravityScale;
         RespawnFinished(false);
+
+        UpdateSkin();
     }
 
 
@@ -89,6 +93,15 @@ public class Player : MonoBehaviour
 
     }
 
+    public void UpdateSkin()
+    {
+        SkinManager skinManager = SkinManager.instance;
+        if (skinManager == null)
+            return;
+
+        anim.runtimeAnimatorController = animator[skinManager.getSkinId()];
+    }
+
     public void RespawnFinished(bool finished)
     {
         if (finished)
@@ -111,7 +124,9 @@ public class Player : MonoBehaviour
 
         StartCoroutine(KnockbackRoutine());
         anim.SetTrigger("knockback");
-        rb.linearVelocity = new Vector2(knockbackPower.x * -facingDir, knockbackPower.y);
+        // rb.linearVelocity = new Vector2(knockbackPower.x * -facingDir, knockbackPower.y);
+        //anim.SetTrigger("knockback");//update 12/10/2025 Trap
+        rb.linearVelocity = new Vector2(knockbackPower.x , knockbackPower.y);
     }
     private IEnumerator KnockbackRoutine()
     {
