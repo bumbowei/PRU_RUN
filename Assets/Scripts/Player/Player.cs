@@ -104,30 +104,22 @@ public class Player : MonoBehaviour
             cd.enabled = false;
         }
     }
-    public void Knockback(float sourceDamageXPosition)//update 12/10/2025 Trap
+    public void Knockback()
     {
-        float knockbackDir = 1;
-
-        if(transform.position.x < sourceDamageXPosition)
-        {
-            knockbackDir = -1;
-        }
         if (isKnocked)
             return;
 
         StartCoroutine(KnockbackRoutine());
-        //anim.SetTrigger("knockback");//update 12/10/2025 Trap
-        rb.velocity = new Vector2(knockbackPower.x * knockbackDir, knockbackPower.y);
+        anim.SetTrigger("knockback");
+        rb.velocity = new Vector2(knockbackPower.x * -facingDir, knockbackPower.y);
     }
     private IEnumerator KnockbackRoutine()
     {
         isKnocked = true;
-        anim.SetBool("isKnocked",true);//update 12/10/2025 Trap
 
         yield return new WaitForSeconds(knockbackDuration);
 
         isKnocked = false;
-        anim.SetBool("isKnocked", false);//update 12/10/2025 Trap
     }
 
     public void Die()
