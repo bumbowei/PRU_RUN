@@ -51,6 +51,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -88,7 +91,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!95 &6635746398497123481
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -102,6 +105,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -162,6 +166,7 @@ CapsuleCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5447619015363017399}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 6200000, guid: 56381d654f3b0124984065a1c75c725a, type: 2}
   m_IncludeLayers:
@@ -185,13 +190,14 @@ CapsuleCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: 0.022794306, y: -0.00741446}
   m_Size: {x: 1.279606, y: 1.4179423}
   m_Direction: 0
 --- !u!50 &2588369806519997077
 Rigidbody2D:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -202,8 +208,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
   m_GravityScale: 4.5
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -242,4 +248,10 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
+  animator:
+  - {fileID: 22100000, guid: d87c2863e4447014e9aa968887eb3b58, type: 2}
+  - {fileID: 22100000, guid: d1a5a23a9eeedf1479e29db649b00ed4, type: 2}
+  - {fileID: 22100000, guid: a053434ea859c3c41be74873822a0611, type: 2}
+  - {fileID: 22100000, guid: e0b26e54d547491418c85622ca81c37c, type: 2}
   deathVFX: {fileID: 2956020484742607634, guid: 4a7945d1618eef743a351bdf628e98df, type: 3}
+  skinId: 0
