@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Level managment")]
     [SerializeField] private int currentLevelIndex;
+    private int nextLevelIndex;
 
     [Header("Player")]
     [SerializeField] private GameObject playerPrefab;
@@ -38,7 +39,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
-
+        nextLevelIndex = currentLevelIndex + 1;
         CollectFruitsInfo();
     }
 
@@ -62,24 +63,46 @@ public class GameManager : MonoBehaviour
     public void AddFruit() => fruitsCollected++;
     public bool FruitHaveRandomLook() => fruitsAreRandom;
 
-    private void LoadTheEndScene() => UnityEngine.SceneManagement.SceneManager.LoadScene("TheEnd");
+    public void LevelFinished()
+    {
+        LevelProgression();
+
+        LoadNextScene();
+    }
+
+    private void LevelProgression()
+    {
+        PlayerPrefs.SetInt("Level" + nextLevelIndex + "Unlocked", 1);
+
+        if (NoMoreLevels() == false)
+            PlayerPrefs.SetInt("ContinueLevelNumber", nextLevelIndex);
+    }
+
+    private void LoadTheEndScene() => SceneManager.LoadScene("TheEnd");
     private void loadNextLevel()
     {
-        int nextLevelIndex = currentLevelIndex + 1;
         SceneManager.LoadScene("Level_" + nextLevelIndex);
     }
-    public void LevelFinished()
+
+    private void LoadNextScene()
     {
         UI_FadeEffect fadeEffect = UI_InGame.instance.fadeEffect;
 
-        int lastLevelIndex = SceneManager.sceneCountInBuildSettings - 2;
 
-        bool noMoreLevels = currentLevelIndex == lastLevelIndex;
 
-        if (!noMoreLevels)
+        if (!NoMoreLevels())
             UI_InGame.instance.fadeEffect.ScreenFade(1, 1.5f, loadNextLevel);
         else
 
             UI_InGame.instance.fadeEffect.ScreenFade(1, 1.5f, LoadTheEndScene);
+    }
+
+    private bool NoMoreLevels()
+    {
+        int lastLevelIndex = SceneManager.sceneCountInBuildSettings - 2;
+
+        bool noMoreLevels = currentLevelIndex == lastLevelIndex;
+
+        return noMoreLevels;
     }
 }
