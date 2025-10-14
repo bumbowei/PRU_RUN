@@ -17352,8 +17352,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4ecebd3d8ac1dd45be539a5b40a959c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelTimer: 0
   currentLevelIndex: 0
+  levelTimer: 0
   playerPrefab: {fileID: 5447619015363017399, guid: 34518746d2f0c7d479fa5b3acbe9b5e8, type: 3}
   respawnPoint: {fileID: 1423344585}
   respawnDelay: 1.5
@@ -17582,6 +17582,12 @@ PrefabInstance:
     - target: {fileID: 5476386302209837654, guid: be51a411aa02ed04b92ffb3078b7e997, type: 3}
       propertyPath: m_Name
       value: UI_InGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 5628477182639902939, guid: be51a411aa02ed04b92ffb3078b7e997, type: 3}
+      propertyPath: m_text
+      value: '0/0
+
+'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
