@@ -20,6 +20,10 @@ public class GameManager : MonoBehaviour
     [Header("Checkpoints")]
     public bool canReactivate;
 
+    //uodate 14/10/2025 Trap_Arrow
+    [Header("Traps")]
+    public GameObject arrowPrefab;
+
     //public int totalFruitsCollected;
 
 
@@ -55,4 +59,16 @@ public class GameManager : MonoBehaviour
 
     public void AddFruit() => fruitsCollected++;
     public bool FruitHaveRandomLook() => fruitsAreRandom;
+
+    //update 14/10/2025 Trap_Arrow
+    public void CreateObject(GameObject prefab, Transform target, float delay = 0)
+    {
+        StartCoroutine(CreateObjectCourutine(prefab, target, delay));
+    }
+    private IEnumerator CreateObjectCourutine(GameObject prefab, Transform target, float delay)
+    {
+        Vector3 newPosition = target.position;
+        yield return new WaitForSeconds(delay);
+        GameObject newObject = Instantiate(prefab, newPosition, Quaternion.identity);
+    }
 }

@@ -288,7 +288,7 @@ Transform:
   m_GameObject: {fileID: 552362432}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.39, y: 0.73, z: 0}
+  m_LocalPosition: {x: 0.63, y: 0.67, z: 0}
   m_LocalScale: {x: 1.0354, y: 1.0354, z: 1.0354}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17261,63 +17261,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2071786116859103529, guid: 5b08c2e7810c2534da5a7bea6946133e, type: 3}
   m_PrefabInstance: {fileID: 5351440525573971105}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1524099802
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 791483857808841960, guid: 69751be82bbbb4a43a4b50e613fc1f17, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -14.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 791483857808841960, guid: 69751be82bbbb4a43a4b50e613fc1f17, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -7.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 791483857808841960, guid: 69751be82bbbb4a43a4b50e613fc1f17, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 791483857808841960, guid: 69751be82bbbb4a43a4b50e613fc1f17, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 791483857808841960, guid: 69751be82bbbb4a43a4b50e613fc1f17, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 791483857808841960, guid: 69751be82bbbb4a43a4b50e613fc1f17, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 791483857808841960, guid: 69751be82bbbb4a43a4b50e613fc1f17, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.00011620762
-      objectReference: {fileID: 0}
-    - target: {fileID: 791483857808841960, guid: 69751be82bbbb4a43a4b50e613fc1f17, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 791483857808841960, guid: 69751be82bbbb4a43a4b50e613fc1f17, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 791483857808841960, guid: 69751be82bbbb4a43a4b50e613fc1f17, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -0.013
-      objectReference: {fileID: 0}
-    - target: {fileID: 2715317446362935598, guid: 69751be82bbbb4a43a4b50e613fc1f17, type: 3}
-      propertyPath: m_Name
-      value: Trap_Trampoline (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 69751be82bbbb4a43a4b50e613fc1f17, type: 3}
 --- !u!1001 &1853401117
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17412,6 +17355,7 @@ MonoBehaviour:
   fruitsCollected: 0
   totalFruits: 0
   canReactivate: 1
+  arrowPrefab: {fileID: 3665092709301950757, guid: 4695bba1d65508846b692eaa37f411e8, type: 3}
 --- !u!4 &1929187879
 Transform:
   m_ObjectHideFlags: 0
@@ -17716,6 +17660,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34518746d2f0c7d479fa5b3acbe9b5e8, type: 3}
+--- !u!1001 &4831572127429286255
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2629185800111839695, guid: 4695bba1d65508846b692eaa37f411e8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2629185800111839695, guid: 4695bba1d65508846b692eaa37f411e8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -9.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 2629185800111839695, guid: 4695bba1d65508846b692eaa37f411e8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2629185800111839695, guid: 4695bba1d65508846b692eaa37f411e8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2629185800111839695, guid: 4695bba1d65508846b692eaa37f411e8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2629185800111839695, guid: 4695bba1d65508846b692eaa37f411e8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2629185800111839695, guid: 4695bba1d65508846b692eaa37f411e8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2629185800111839695, guid: 4695bba1d65508846b692eaa37f411e8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2629185800111839695, guid: 4695bba1d65508846b692eaa37f411e8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2629185800111839695, guid: 4695bba1d65508846b692eaa37f411e8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3665092709301950757, guid: 4695bba1d65508846b692eaa37f411e8, type: 3}
+      propertyPath: m_Name
+      value: Trap_Arrow
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4695bba1d65508846b692eaa37f411e8, type: 3}
 --- !u!1001 &5063283949349394057
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17947,6 +17948,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trap_Trampoline
       objectReference: {fileID: 0}
+    - target: {fileID: 2715317446362935598, guid: 69751be82bbbb4a43a4b50e613fc1f17, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8471862393390840462, guid: 69751be82bbbb4a43a4b50e613fc1f17, type: 3}
+      propertyPath: pushPower
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17974,4 +17983,4 @@ SceneRoots:
   - {fileID: 1286919431138477594}
   - {fileID: 4593094769187172037}
   - {fileID: 7261371056515724969}
-  - {fileID: 1524099802}
+  - {fileID: 4831572127429286255}
