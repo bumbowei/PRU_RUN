@@ -8,7 +8,7 @@ public class UI_MainMenu : MonoBehaviour
 {
 
     private UI_FadeEffect fadeEffect;
-    public string sceneName;
+    public string firstLevelName;
 
     [SerializeField] private GameObject[] uiElenments;
 
@@ -40,7 +40,7 @@ public class UI_MainMenu : MonoBehaviour
         
     }
 
-    private void LoadLevelScene() => SceneManager.LoadScene(sceneName);
+    private void LoadLevelScene() => SceneManager.LoadScene(firstLevelName);
 
 
 }

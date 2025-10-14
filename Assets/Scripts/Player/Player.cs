@@ -151,7 +151,7 @@ public class Player : MonoBehaviour
     private IEnumerator PushCouroutine(Vector2 direction, float duration = 0)
     {
         canBeControlled = false;
-        rb.velocity = Vector2.zero;
+        rb.linearVelocity = Vector2.zero;
         rb.AddForce(direction,ForceMode2D.Impulse);
         yield return new WaitForSeconds(duration);
         canBeControlled =true;
