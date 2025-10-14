@@ -7,8 +7,11 @@ public class GameManager : MonoBehaviour
 {   
     public static GameManager instance;
 
+    private UI_InGame inGameUI;
+
     [Header("Level managment")]
     [SerializeField] private int currentLevelIndex;
+    [SerializeField] private float levelTimer;
     private int nextLevelIndex;
 
     [Header("Player")]
@@ -40,13 +43,26 @@ public class GameManager : MonoBehaviour
     {
         currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
         nextLevelIndex = currentLevelIndex + 1;
+
+        inGameUI = UI_InGame.instance; 
+
         CollectFruitsInfo();
+
+    }
+
+    private void Update()
+    {
+        levelTimer += Time.deltaTime;
+
+        inGameUI.UpdateTimerUI(levelTimer);
     }
 
     private void CollectFruitsInfo()
     {
         Fruit[] allFruits = FindObjectsByType<Fruit>(FindObjectsSortMode.None);
         totalFruits = allFruits.Length;
+        inGameUI.UpdateFruitUI(fruitsCollected, totalFruits);
+
     }
 
     public void UpdateRespawnPosition(Transform newRespawnPoint) => respawnPoint = newRespawnPoint;
@@ -60,7 +76,11 @@ public class GameManager : MonoBehaviour
         player = newPlayer.GetComponent<Player>();
     }
 
-    public void AddFruit() => fruitsCollected++;
+    public void AddFruit()
+    {
+        fruitsCollected++;
+        inGameUI.UpdateFruitUI(fruitsCollected, totalFruits);
+    }
     public bool FruitHaveRandomLook() => fruitsAreRandom;
 
     public void LevelFinished()
@@ -86,15 +106,15 @@ public class GameManager : MonoBehaviour
 
     private void LoadNextScene()
     {
-        UI_FadeEffect fadeEffect = UI_InGame.instance.fadeEffect;
+        UI_FadeEffect fadeEffect = inGameUI.fadeEffect;
 
 
 
         if (!NoMoreLevels())
-            UI_InGame.instance.fadeEffect.ScreenFade(1, 1.5f, loadNextLevel);
+            inGameUI.fadeEffect.ScreenFade(1, 1.5f, loadNextLevel);
         else
 
-            UI_InGame.instance.fadeEffect.ScreenFade(1, 1.5f, LoadTheEndScene);
+            inGameUI.fadeEffect.ScreenFade(1, 1.5f, LoadTheEndScene);
     }
 
     private bool NoMoreLevels()
