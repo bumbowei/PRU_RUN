@@ -10763,7 +10763,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 609985861
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -17428,63 +17428,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13875f772d08bba4aa80399a924e8ecf, type: 3}
---- !u!1001 &1286919431138477594
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3608094293591554218, guid: d967f345a96cd2040a699a395db219d2, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -6.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3608094293591554218, guid: d967f345a96cd2040a699a395db219d2, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -9.55
-      objectReference: {fileID: 0}
-    - target: {fileID: 3608094293591554218, guid: d967f345a96cd2040a699a395db219d2, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3608094293591554218, guid: d967f345a96cd2040a699a395db219d2, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3608094293591554218, guid: d967f345a96cd2040a699a395db219d2, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3608094293591554218, guid: d967f345a96cd2040a699a395db219d2, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3608094293591554218, guid: d967f345a96cd2040a699a395db219d2, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3608094293591554218, guid: d967f345a96cd2040a699a395db219d2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3608094293591554218, guid: d967f345a96cd2040a699a395db219d2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3608094293591554218, guid: d967f345a96cd2040a699a395db219d2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7458873613065394076, guid: d967f345a96cd2040a699a395db219d2, type: 3}
-      propertyPath: m_Name
-      value: Trap_Spike
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d967f345a96cd2040a699a395db219d2, type: 3}
 --- !u!1001 &2864642699836579545
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17542,63 +17485,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 882c65116014f0c479bec89aa0a9f744, type: 3}
---- !u!1001 &4593094769187172037
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 410488405420356210, guid: 14cd986056583e348a4d12238ba50f73, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 410488405420356210, guid: 14cd986056583e348a4d12238ba50f73, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 410488405420356210, guid: 14cd986056583e348a4d12238ba50f73, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 410488405420356210, guid: 14cd986056583e348a4d12238ba50f73, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 410488405420356210, guid: 14cd986056583e348a4d12238ba50f73, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 410488405420356210, guid: 14cd986056583e348a4d12238ba50f73, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 410488405420356210, guid: 14cd986056583e348a4d12238ba50f73, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 410488405420356210, guid: 14cd986056583e348a4d12238ba50f73, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 410488405420356210, guid: 14cd986056583e348a4d12238ba50f73, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 410488405420356210, guid: 14cd986056583e348a4d12238ba50f73, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3217013489206124495, guid: 14cd986056583e348a4d12238ba50f73, type: 3}
-      propertyPath: m_Name
-      value: Trap_Saw
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 14cd986056583e348a4d12238ba50f73, type: 3}
 --- !u!1001 &4777786281972061763
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17650,10 +17536,6 @@ PrefabInstance:
     - target: {fileID: 5447619015363017399, guid: 34518746d2f0c7d479fa5b3acbe9b5e8, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7617925828057489298, guid: 34518746d2f0c7d479fa5b3acbe9b5e8, type: 3}
-      propertyPath: knockbackDuration
-      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
