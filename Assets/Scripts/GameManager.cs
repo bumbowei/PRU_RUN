@@ -41,10 +41,10 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        inGameUI = UI_InGame.instance;
+
         currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
         nextLevelIndex = currentLevelIndex + 1;
-
-        inGameUI = UI_InGame.instance; 
 
         CollectFruitsInfo();
 
@@ -61,6 +61,7 @@ public class GameManager : MonoBehaviour
     {
         Fruit[] allFruits = FindObjectsByType<Fruit>(FindObjectsSortMode.None);
         totalFruits = allFruits.Length;
+
         inGameUI.UpdateFruitUI(fruitsCollected, totalFruits);
 
         PlayerPrefs.SetInt("Level" + currentLevelIndex + "TotalFruits", totalFruits);
@@ -83,6 +84,13 @@ public class GameManager : MonoBehaviour
         fruitsCollected++;
         inGameUI.UpdateFruitUI(fruitsCollected, totalFruits);
     }
+    public void RemoveFruit()
+    {
+        fruitsCollected--;
+        inGameUI.UpdateFruitUI(fruitsCollected, totalFruits);
+    }
+    public int FruitsCollected() => fruitsCollected;
+
     public bool FruitHaveRandomLook() => fruitsAreRandom;
 
     public void LevelFinished()

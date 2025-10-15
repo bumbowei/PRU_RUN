@@ -17579,6 +17579,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 921388026166854500, guid: be51a411aa02ed04b92ffb3078b7e997, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 1981808840371882673, guid: f37fcac376c58b541b44857a5580d9f1, type: 2}
     - target: {fileID: 5476386302209837654, guid: be51a411aa02ed04b92ffb3078b7e997, type: 3}
       propertyPath: m_Name
       value: UI_InGame
@@ -17589,6 +17593,10 @@ PrefabInstance:
 
 '
       objectReference: {fileID: 0}
+    - target: {fileID: 5628477182639902939, guid: be51a411aa02ed04b92ffb3078b7e997, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 1981808840371882673, guid: f37fcac376c58b541b44857a5580d9f1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17646,6 +17654,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7617925828057489298, guid: 34518746d2f0c7d479fa5b3acbe9b5e8, type: 3}
+      propertyPath: skinId
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617925828057489298, guid: 34518746d2f0c7d479fa5b3acbe9b5e8, type: 3}
+      propertyPath: animator.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617925828057489298, guid: 34518746d2f0c7d479fa5b3acbe9b5e8, type: 3}
+      propertyPath: 'animator.Array.data[4]'
+      value: 
+      objectReference: {fileID: 22100000, guid: 7906c1a256a367e4eb3efcef805a0025, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
