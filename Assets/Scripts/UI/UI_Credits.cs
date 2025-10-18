@@ -16,6 +16,7 @@ public class UI_Credits : MonoBehaviour
     private bool creditsSkipped;
 
 
+
     //private void Awake()
     //{
     //    fadeEffect = GetComponentInChildren<UI_FadeEffect>();
