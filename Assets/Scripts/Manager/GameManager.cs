@@ -48,9 +48,7 @@ public class GameManager : MonoBehaviour
         inGameUI = UI_InGame.instance;
 
         currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
-        if (respawnPoint == null) respawnPoint = FindFirstObjectByType<StartPoint>().transform;
 
-        if(player == null) player = FindFirstObjectByType<Player>();
         nextLevelIndex = currentLevelIndex + 1;
 
         CollectFruitsInfo();
@@ -84,24 +82,7 @@ public class GameManager : MonoBehaviour
 
     public void UpdateRespawnPosition(Transform newRespawnPoint) => respawnPoint = newRespawnPoint;
         
-    public void RespawnPlayer()
-    {
-        DifficultyManager difficultyManager = DifficultyManager.instance;
 
-        if (difficultyManager != null && difficultyManager.difficulty == DifficultyType.Hard)
-            return;
-
-
-
-        StartCoroutine(RespawCourutine());
-    }
-    private IEnumerator RespawCourutine()
-    {
-        yield return new WaitForSeconds(respawnDelay);
-
-        GameObject newPlayer = Instantiate(playerPrefab, respawnPoint.position, Quaternion.identity);
-        player = newPlayer.GetComponent<Player>();
-    }
 
     public void AddFruit()
     {
