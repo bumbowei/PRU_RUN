@@ -56,7 +56,9 @@ public class UI_SkinSelection : MonoBehaviour
             mainMenu.SwicthUI(levelSelection.gameObject);
         }
 
+        AudioManager.instance.PlaySFX(4);
         UpdateSkinDisplay();
+
     }
 
     public void NextSkin()
@@ -64,6 +66,7 @@ public class UI_SkinSelection : MonoBehaviour
         skinIndex++;
         if (skinIndex > maxIndex)
             skinIndex = 0;
+        AudioManager.instance.PlaySFX(4);
 
         UpdateSkinDisplay();
     }
@@ -74,6 +77,8 @@ public class UI_SkinSelection : MonoBehaviour
         {
             skinIndex = maxIndex;
         }
+        AudioManager.instance.PlaySFX(4);
+
         UpdateSkinDisplay();
     }
 
@@ -104,9 +109,14 @@ public class UI_SkinSelection : MonoBehaviour
     {
         if (HaveEnoughFruits(skinList[index].skinPrice) == false)
         {
+            AudioManager.instance.PlaySFX(6);
+
             Debug.Log("Không đủ trái cây bạn ơi! Liu Liu!!!");
             return;
         }
+
+        AudioManager.instance.PlaySFX(10);
+
         string skinName = skinList[skinIndex].skinName;
         skinList[skinIndex].unlocked = true;
 

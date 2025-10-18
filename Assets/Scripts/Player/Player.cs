@@ -138,14 +138,17 @@ public class Player : MonoBehaviour
 
         anim.runtimeAnimatorController = animator[skinManager.getSkinId()];
     }
-
+    //HanleEnemyDetection audio 1 after if 
     public void RespawnFinished(bool finished)
     {
         if (finished)
         {
+            AudioManager.instance.PlaySFX(11);
+
             rb.gravityScale = defaulGravityScale;
             canBeControlled = true;
             cd.enabled = true;
+
         }
         else
         {
@@ -165,6 +168,10 @@ public class Player : MonoBehaviour
         // rb.linearVelocity = new Vector2(knockbackPower.x * -facingDir, knockbackPower.y);
         //anim.SetTrigger("knockback");//update 12/10/2025 Trap
 
+
+
+        AudioManager.instance.PlaySFX(9);
+
         CameraManager.instance.ScreenShake(knockbackDir);//khong xoa doan nay
 
         StartCoroutine(KnockbackRoutine());
@@ -182,6 +189,8 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
+        AudioManager.instance.PlaySFX(0);
+
         GameObject vfx = Instantiate(deathVFX, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
@@ -281,9 +290,16 @@ public class Player : MonoBehaviour
 
 
 
-    private void Jump() => rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+    private void Jump()
+    {
+        AudioManager.instance.PlaySFX(3);
+
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+    }
     private void DoubleJump()
     {
+        AudioManager.instance.PlaySFX(3);
+
         StopCoroutine(WallJumpRoutine());
         isWallJumping = false;
         canDoubleJump = false;
@@ -291,6 +307,8 @@ public class Player : MonoBehaviour
     }
     private void WallJump()
     {
+        AudioManager.instance.PlaySFX(12);
+
         canDoubleJump = true;
         rb.linearVelocity = new Vector2(wallJumpForce.x * -facingDir, wallJumpForce.y);
 
