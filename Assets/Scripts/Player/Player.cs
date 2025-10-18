@@ -156,14 +156,20 @@ public class Player : MonoBehaviour
     }
     public void Knockback()
     {
+        float knockbackDir = 1;
+
         if (isKnocked)
             return;
 
-        StartCoroutine(KnockbackRoutine());
         anim.SetTrigger("knockback");
         // rb.linearVelocity = new Vector2(knockbackPower.x * -facingDir, knockbackPower.y);
         //anim.SetTrigger("knockback");//update 12/10/2025 Trap
-        rb.linearVelocity = new Vector2(knockbackPower.x , knockbackPower.y);
+
+        CameraManager.instance.ScreenShake(knockbackDir);//khong xoa doan nay
+
+        StartCoroutine(KnockbackRoutine());
+
+        rb.linearVelocity = new Vector2(knockbackPower.x * knockbackDir, knockbackPower.y);
     }
     private IEnumerator KnockbackRoutine()
     {
