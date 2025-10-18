@@ -6,18 +6,43 @@ public class AudioManager : MonoBehaviour
 
     [Header("Audio Sources")]
     [SerializeField] private AudioSource[] sfx;
+    [SerializeField] private AudioSource[] bgm;
+
+    [SerializeField] private int bgmIndex;
+
 
     private void Awake()
     {
+        DontDestroyOnLoad(gameObject);
+
         if (instance == null)
-        {
             instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
         else
-        {
             Destroy(gameObject);
-        }
+
+        InvokeRepeating(nameof(PlayMusicIfNeeded), 0, 2);
+    }
+
+
+    public void PlayMusicIfNeeded()
+    {
+        if(bgm[bgmIndex].isPlaying == false)
+            PlayRandomBGM();
+    }
+    public void PlayRandomBGM()
+    {
+        bgmIndex = Random.Range(0, bgm.Length);
+        PlayBGM(bgmIndex);
+    }
+    public void PlayBGM(int bgmToPlay)
+    {
+        for (int i = 0; i < bgm.Length; i++)
+            bgm[i].Stop();
+
+
+        bgmIndex = bgmToPlay;
+        bgm[bgmToPlay].Play();
+
     }
 
     public void PlaySFX(int sfxToPlay, bool boolPicth = true)

@@ -143,10 +143,11 @@ public class Player : MonoBehaviour
     {
         if (finished)
         {
+            AudioManager.instance.PlaySFX(11);
+
             rb.gravityScale = defaulGravityScale;
             canBeControlled = true;
             cd.enabled = true;
-            AudioManager.instance.PlaySFX(11);
 
         }
         else
