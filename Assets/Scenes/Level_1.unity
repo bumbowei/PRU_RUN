@@ -17422,6 +17422,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 7466408731746479292, guid: eef6ce866f139d44184848a8632a7fa4, type: 3}
+      propertyPath: m_Radius
+      value: 0.20736758
+      objectReference: {fileID: 0}
+    - target: {fileID: 7466408731746479292, guid: eef6ce866f139d44184848a8632a7fa4, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.00000033421213
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 170989261038018408, guid: eef6ce866f139d44184848a8632a7fa4, type: 3}
     m_RemovedGameObjects: []
@@ -17814,24 +17822,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 921388026166854500, guid: be51a411aa02ed04b92ffb3078b7e997, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 1981808840371882673, guid: f37fcac376c58b541b44857a5580d9f1, type: 2}
     - target: {fileID: 5476386302209837654, guid: be51a411aa02ed04b92ffb3078b7e997, type: 3}
       propertyPath: m_Name
       value: UI_InGame
       objectReference: {fileID: 0}
-    - target: {fileID: 5628477182639902939, guid: be51a411aa02ed04b92ffb3078b7e997, type: 3}
-      propertyPath: m_text
-      value: '0/0
-
-'
-      objectReference: {fileID: 0}
-    - target: {fileID: 5628477182639902939, guid: be51a411aa02ed04b92ffb3078b7e997, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 1981808840371882673, guid: f37fcac376c58b541b44857a5580d9f1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
