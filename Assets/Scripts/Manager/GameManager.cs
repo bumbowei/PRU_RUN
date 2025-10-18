@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -28,6 +29,9 @@ public class GameManager : MonoBehaviour
     [Header("Checkpoints")]
     public bool canReactivate;
 
+    [Header("Managers")]
+    [SerializeField] private AudioManager audioManager;
+
     //public int totalFruitsCollected;
 
 
@@ -44,9 +48,13 @@ public class GameManager : MonoBehaviour
         inGameUI = UI_InGame.instance;
 
         currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
+        if (respawnPoint == null) respawnPoint = FindFirstObjectByType<StartPoint>().transform;
+
+        if(player == null) player = FindFirstObjectByType<Player>();
         nextLevelIndex = currentLevelIndex + 1;
 
         CollectFruitsInfo();
+        CreateManagerIfNeeded();
 
     }
 
@@ -55,6 +63,12 @@ public class GameManager : MonoBehaviour
         levelTimer += Time.deltaTime;
 
         inGameUI.UpdateTimerUI(levelTimer);
+    }
+
+    private void CreateManagerIfNeeded()
+    {
+        if(AudioManager.instance == null)
+            Instantiate(audioManager);
     }
 
     private void CollectFruitsInfo()

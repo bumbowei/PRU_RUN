@@ -20,6 +20,8 @@ public class AudioManager : MonoBehaviour
         else
             Destroy(gameObject);
 
+        if(bgm.Length <= 0)
+            return;
         InvokeRepeating(nameof(PlayMusicIfNeeded), 0, 2);
     }
 
@@ -36,6 +38,10 @@ public class AudioManager : MonoBehaviour
     }
     public void PlayBGM(int bgmToPlay)
     {
+        if(bgm.Length <=0)
+            return;
+            Debug.Log("Khong co nhac sao choi be oi!!");
+
         for (int i = 0; i < bgm.Length; i++)
             bgm[i].Stop();
 
