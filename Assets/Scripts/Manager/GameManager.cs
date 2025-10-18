@@ -131,12 +131,16 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetFloat("Level" + currentLevelIndex + "BestTime", levelTimer);
     }
 
-    private void LevelProgression()
+    private void LevelProgression() //fix this method to save level progression
     {
         PlayerPrefs.SetInt("Level" + nextLevelIndex + "Unlocked", 1);
 
         if (NoMoreLevels() == false)
             PlayerPrefs.SetInt("ContinueLevelNumber", nextLevelIndex);
+            SkinManager skinManager = SkinManager.instance;
+            if(skinManager != null)
+                PlayerPrefs.SetInt("LastUseSkin", skinManager.getSkinId());
+
     }
 
     public void RestartLevel()
