@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -38,6 +39,10 @@ public class Player : MonoBehaviour
     [SerializeField] private float groundCheckDistnace;
     [SerializeField] private float wallCheckDistance;
     [SerializeField] private LayerMask whatIsGround;
+    [Space] 
+    [SerializeField] private Transform enemyCheck;
+    [SerializeField] private float enemyCheckRadius;
+    [SerializeField] private LayerMask whatIsEnemy;
     private bool isGrounded;
     private bool isAirborne;
     private bool isWallDetected;
@@ -74,7 +79,7 @@ public class Player : MonoBehaviour
 
         if (isKnocked)
             return;
-
+        HandleEnemyDetection();
         HandleInput();
         HandleWallSlide();
         HandleMovement();
@@ -82,6 +87,23 @@ public class Player : MonoBehaviour
         HandleCollision();
         HandleAnimations();
 
+    }
+
+    private void HandleEnemyDetection()
+    {
+        if(rb.velocity.y >= 0 )
+            return;
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(enemyCheck.position, enemyCheckRadius, whatIsEnemy);
+
+        foreach(var enemy in colliders)
+        {
+            Enemy newEnemy = enemy.GetComponent<Enemy>();   
+            if (enemy != null)
+            {
+                newEnemy.Die();
+                Jump();
+            }
+        }
     }
 
     public void RespawnFinished(bool finished)
@@ -245,6 +267,7 @@ public class Player : MonoBehaviour
     {
         isGrounded = Physics2D.Raycast(transform.position, Vector2.down, groundCheckDistnace, whatIsGround);
         isWallDetected = Physics2D.Raycast(transform.position, Vector2.right * facingDir, wallCheckDistance, whatIsGround);
+
     }
 
     private void HandleAnimations()
@@ -282,6 +305,7 @@ public class Player : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        Gizmos.DrawWireSphere(enemyCheck.position, enemyCheckRadius);
         Gizmos.DrawLine(transform.position, new Vector2(transform.position.x, transform.position.y - groundCheckDistnace));
         Gizmos.DrawLine(transform.position, new Vector2(transform.position.x + (wallCheckDistance * facingDir), transform.position.y));
     }
