@@ -16,17 +16,15 @@ public class Checkpoint : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(active && canBeReactivated == false)             
+        if (active && canBeReactivated == false)
             return;
 
         Player player = collision.GetComponent<Player>();
 
-        if(player != null)
-        {
+        if (player != null)
             ActivateCheckpoint();
-
-        }
     }
+
     private void ActivateCheckpoint()
     {
         active = true;
