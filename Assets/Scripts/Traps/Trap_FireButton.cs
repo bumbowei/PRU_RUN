@@ -1,25 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-//update 13/10/2025 Trap Trampoline
-public class Trap_Trampoline : MonoBehaviour
+//create 19/10/2025 Trap Fire
+public class Trap_FireButton : MonoBehaviour
 {
     private Animator anim;
-    [SerializeField] private float pushPower;
-    [SerializeField] private float duration = .5f;
+    private Trap_Fire trapFire;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
+        trapFire = GetComponentInParent<Trap_Fire>();
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Player player = collision.gameObject.GetComponent<Player>();
-        if(player != null)
+        if (player != null)
         {
-            player.Push(transform.up * pushPower, duration);
             anim.SetTrigger("activate");
+            trapFire.SwitchOffFire();
         }
     }
 }

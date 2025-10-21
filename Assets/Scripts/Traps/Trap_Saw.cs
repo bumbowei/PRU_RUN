@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-//create 12/10/2025 Trap
+//create 12/10/2025 Trap Saw
 public class TrapSaw : MonoBehaviour
 {
     private Animator anim;
@@ -24,8 +24,16 @@ public class TrapSaw : MonoBehaviour
 
     private void UpdateWaypointsInfo()
     {
+        List<Trap_SawWaypoint> wayPointList = new List<Trap_SawWaypoint>(GetComponentsInChildren<Trap_SawWaypoint>());//update 19/10/2025 Trap Saw
+        if (wayPointList.Count != wayPoint.Length) //update 19/10/2025 Trap Saw  
+        {
+            wayPoint = new Transform[wayPointList.Count];
+            for (int i = 0;i < wayPointList.Count; i++)
+            {
+                wayPoint[i] = wayPointList[i].transform;
+            }
+        }
         wayPointPosition = new Vector3[wayPoint.Length];
-
         for (int i = 0; i < wayPoint.Length; i++)
         {
             wayPointPosition[i] = wayPoint[i].position;
